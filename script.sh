@@ -1,6 +1,5 @@
 #!/bin/bash
-for((c=1; c<=93;c++))
-do
-git branch "$c"
-done
-[A[A[D[D[B[D[D[D[C[A[C[C[C[C[C[C[C[C[C[C-d"$c"[D[D[D[D "$c"[B
+while IFS='' read -r line || [[ -n "$line" ]]; do
+   # echo "$line" | xargs
+   git branch "$line" | sed 's/^ *//g'
+done < "$1"
